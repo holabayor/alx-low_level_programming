@@ -10,7 +10,6 @@ int print_last_digit(int val)
 	int digit;
 
 	digit = val % 10;
-	if (digit < 0)
-		digit *= -1
-	return (digit);
+	_putchar(digit);
+	return (0);
 }
