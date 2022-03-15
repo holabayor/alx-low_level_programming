@@ -10,6 +10,6 @@ int print_last_digit(int val)
 	int digit;
 
 	digit = val % 10;
-	_putchar(digit);
-	return (0);
+	_putchar(digit + '0');
+	return (digit);
 }
