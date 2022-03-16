@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * print_natural - entry point
- * @size: the size of the multplication table
+ * print_natural - entry poin
+ *
  * Return: void
  */
 void print_natural(void)
@@ -10,7 +10,7 @@ void print_natural(void)
 
 	for (int i = 0; i < 1024; i++)
 	{
-		if (i % 3 == 0) || (i % 5 == 0))
+		if ((i % 3 == 0) || (i % 5 == 0))
 			sum += i;
 	}
 	printf(sum);
