@@ -25,11 +25,15 @@ void print_times_table(int size)
 					_putchar(' ');
 					_putchar(res + '0');
 				}
-				else
+				else if ((res >= 10) && (res < 100))
 				{
 					_putchar((res / 10) + '0');
 					_putchar((res % 10) + '0');
 				}
+				else
+				{
+					_putchar((res / 100) + '0');
+					_putchar((res % 100 / 10) + '0');
 				if (col != size)
 				{
 					_putchar(',');
