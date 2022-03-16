@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_times_table - entry point
  * @size: the size of the multplication table
@@ -7,14 +6,13 @@
  */
 void print_times_table(int size)
 {
-	if ((size > 0) && (size <= 15))
+	if ((size >= 0) && (size <= 15))
 	{
 		int row, col = size;
 		int res;
 
 		for (row = 0; row <= size; row++)
 		{
-
 			for (col = 0; col <= size; col++)
 			{
 				res = row * col;
@@ -40,8 +38,7 @@ void print_times_table(int size)
 				}
 				if (col != size)
 				{
-					_putchar(',');
-					_putchar(' ');
+					_putchar((',') + (' '));
 				}
 			}
 			_putchar('\n');
