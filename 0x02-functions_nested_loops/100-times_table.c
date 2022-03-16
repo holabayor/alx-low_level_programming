@@ -20,7 +20,7 @@ void print_times_table(int size)
 				res = row * col;
 				if ((res == 0) && (col == 0))
 					_putchar(res + '0');
-				else if (res <= size)
+				else if (res <= 9)
 				{
 					_putchar(' ');
 					_putchar(res + '0');
