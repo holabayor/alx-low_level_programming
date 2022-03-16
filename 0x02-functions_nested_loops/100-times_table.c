@@ -34,6 +34,7 @@ void print_times_table(int size)
 				{
 					_putchar((res / 100) + '0');
 					_putchar((res % 100 / 10) + '0');
+				}
 				if (col != size)
 				{
 					_putchar(',');
