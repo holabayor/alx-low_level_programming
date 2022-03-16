@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - entry poin
+ * main - entry point
  *
- * Return: the sum of the natural numbers 
+ * Return: the sum of the natural numbers
  */
 int main(void)
 {
@@ -13,5 +13,6 @@ int main(void)
 		if ((i % 3 == 0) || (i % 5 == 0))
 			sum += i;
 	}
-	return (sum);
+	printf("%i", sum);
+	return (0);
 }
