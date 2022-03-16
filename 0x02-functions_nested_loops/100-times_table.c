@@ -12,15 +12,15 @@ void print_times_table(int size)
 		int row, col = size;
 		int res;
 
-		for (row = 0; row <= 9; row++)
+		for (row = 0; row <= size; row++)
 		{
 
-			for (col = 0; col <= 9; col++)
+			for (col = 0; col <= size; col++)
 			{
 				res = row * col;
 				if ((res == 0) && (col == 0))
 					_putchar(res + '0');
-				else if (res <= 9)
+				else if (res <= size)
 				{
 					_putchar(' ');
 					_putchar(res + '0');
@@ -30,7 +30,7 @@ void print_times_table(int size)
 					_putchar((res / 10) + '0');
 					_putchar((res % 10) + '0');
 				}
-				if (col != 9)
+				if (col != size)
 				{
 					_putchar(',');
 					_putchar(' ');
