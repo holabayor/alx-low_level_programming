@@ -8,18 +8,17 @@ void fib(int limit)
 {
 	static long a = 1, b = 2;
 	long new;
-	
+
 
 	if (limit > 0)
 	{
 		new = a + b;
-		if (a < 0)
-			a *=- 1;
 		a = b;
 		b = new;
 		printf(", %ld", new);
 		fib(limit - 1);
-	}
+	
+	printf("\n");}
 }
 
 /**
