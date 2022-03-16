@@ -9,6 +9,7 @@ void print_times_table(int size)
 	if ((size >= 0) && (size <= 15))
 	{
 		int row, col = size, res;
+		
 		for (row = 0; row <= size; row++)
 		{
 			for (col = 0; col <= size; col++)
