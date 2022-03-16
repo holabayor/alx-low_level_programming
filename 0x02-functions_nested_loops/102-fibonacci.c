@@ -6,14 +6,18 @@
  */
 void fib(int limit)
 {
-	static int a = 1, b = 2, new;
+	static long a = 1, b = 2;
+	long new;
+	
 
 	if (limit > 0)
 	{
 		new = a + b;
+		if (a < 0)
+			a *=- 1;
 		a = b;
 		b = new;
-		printf("%i, ", new);
+		printf(", %ld", new);
 		fib(limit - 1);
 	}
 }
@@ -27,7 +31,7 @@ int main(void)
 	int count;
 
 	count = 50;
-	printf("%i, %i\n", 1, 2);
+	printf("%i, %i", 1, 2);
 	fib(count - 2);
 	return (0);
 }
