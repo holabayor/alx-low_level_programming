@@ -19,7 +19,6 @@ void fib(int limit)
 		fib(limit - 1);
 	
 	}
-	printf("\n");
 }
 
 /**
@@ -33,5 +32,6 @@ int main(void)
 	count = 50;
 	printf("%i, %i", 1, 2);
 	fib(count - 2);
+	printf("\n");
 	return (0);
 }
