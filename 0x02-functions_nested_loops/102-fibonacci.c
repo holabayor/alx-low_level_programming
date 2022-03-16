@@ -17,7 +17,6 @@ void fib(int limit)
 		b = new;
 		printf(", %ld", new);
 		fib(limit - 1);
-	
 	}
 }
 
