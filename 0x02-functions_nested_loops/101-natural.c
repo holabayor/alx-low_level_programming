@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- * print_natural - entry poin
+ * main - entry poin
  *
- * Return: void
+ * Return: the sum of the natural numbers 
  */
-void print_natural(void)
+int main(void)
 {
 	int i, sum = 0;
 
@@ -13,5 +13,5 @@ void print_natural(void)
 		if ((i % 3 == 0) || (i % 5 == 0))
 			sum += i;
 	}
-	printf("%i", sum);
+	return (sum);
 }
