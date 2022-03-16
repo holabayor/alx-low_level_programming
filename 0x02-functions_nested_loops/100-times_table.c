@@ -38,7 +38,8 @@ void print_times_table(int size)
 				}
 				if (col != size)
 				{
-					_putchar((',') + (' '));
+					_putchar(',');
+					_putchar(' ');
 				}
 			}
 			_putchar('\n');
