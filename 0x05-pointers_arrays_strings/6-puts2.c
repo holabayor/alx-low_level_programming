@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * _puts - print a string
- * @str: input string
+ * puts2 - print a string every other character
+ * @str: pointer to the input string
  * Return: void
  */
-void _puts(char *str)
+void puts2(char *str)
 {
 	int i = 0;
 
 	while (str[i])
 	{
 		_putchar(str[i]);
-		i++;
+		i += 2;
 	}
 	_putchar('\n');
 }
