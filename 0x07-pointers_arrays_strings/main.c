@@ -3,11 +3,12 @@
 
 int main(void)
 {
-	char buffer[98] = {0x00};
-	char buffer2[98] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+	char *s = "hello";
+	char *f;
 
-	//_memset(buffer + 50, buffer2, 10);
-	_memset(buffer, 0x01, 95);
+	f = _strchr(s, 'l');
 
+	if (f != NULL)
+		printf("%s\n", f);
 	return (0);
 }
