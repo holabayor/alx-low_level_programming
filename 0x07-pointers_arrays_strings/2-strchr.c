@@ -1,17 +1,31 @@
 #include "main.h"
 
 /**
- * _strchr - function that locates a character in a string
- * @s: memory area to be filled
- * @c: the length of the byte to be filled
- * Return: pointer to first occurence
- */
+ * _strchr - Locates a character in a string
+ * @s: String
+ * @c: Character to search
+ * Return: Pointer to the first occurrence of the character c in the string s
+ **/
+
 char *_strchr(char *s, char c)
 {
-	unsigned int i = 0;
 
-	for (i = 0; *(s + i) != '\0'; i++)
-		if (*(s + i) == c)
-			return (s + i);
-	return ('\0');
+	while (*s != '\0') /*Declaring WHILE*/
+	{
+		if (*s == c) /*if s ==  c*/
+		{
+			return (s); /*return s*/
+		}
+
+		++s;
+	}
+
+	if (*s == c)
+	{
+		return (s);
+
+	}
+
+
+	return (0);/* values null*/
 }

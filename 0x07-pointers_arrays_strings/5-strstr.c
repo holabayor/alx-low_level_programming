@@ -1,18 +1,30 @@
 #include "main.h"
 
 /**
- * _strstr - function that searches for any set of bytes
- * @haystack: initial segment of the segment
- * @needle: the bytes to accept
- * Return: pointer to the byte found
- */
-char *_strstr(char *haystack, char *needle)
-{
-	unsigned int i, j;
+ * _strstr - first occurrence of the substring needle in the string haystack
+ * @haystack: main str to be examined
+ * @needle: searched in haystack
+ * Return: return 0
+ **/
 
-	for (i = 0; *(needle + i) != '\0'; i++)
-		for (j = 0; *(haystack + j) != '\0'; j++)
-			if (*(haystack + j) == *(needle + i))
-				return (haystack + j);
-	return ('\0');
+char  *_strstr(char *haystack, char *needle)
+{
+	char *str1, *str2; /*Declaring variables*/
+
+	while (*haystack != '\0')
+	{
+		str1 = haystack; /*values*/
+		str2 = needle;
+
+		/*Star WHILE*/
+		while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
+		{
+			haystack++;
+			str2++;
+		}
+		if (*str2 == '\0')
+			return (str1);
+		haystack = str1 + 1;
+	}
+	return (0);
 }
