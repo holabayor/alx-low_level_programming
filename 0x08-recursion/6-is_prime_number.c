@@ -11,7 +11,7 @@ int _is_prime(int n, int val)
 		return (0);
 	else if (n % val == 0)
 		return (0);
-	else if (val = n)
+	else if (val == n)
 		return (1);
 	else
 		return (_is_prime(n, val++));
