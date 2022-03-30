@@ -5,13 +5,15 @@ int main(void)
 {
 	int n;
 
-	n = factorial(1);
+	n = _pow_recursion(1, 10);
 	printf("%d\n", n);
-	n = factorial(5);
+	n = _pow_recursion(11, 2);
 	printf("%d\n", n);
-	n = factorial(10);
+	n = _pow_recursion(5, 2);
 	printf("%d\n", n);
-	n = factorial(-1024);
+	n = _pow_recursion(5, -2);
+	printf("%d\n", n);
+	n = _pow_recursion(10, -2);
 	printf("%d\n", n);
 	return (0);
 }
