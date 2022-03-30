@@ -8,12 +8,11 @@ int _sqrt_recursion(int n)
 {
 	int val;
 
-	if (y < 0)
+	if (n < 0)
 		return (-1);
 	if (val * val = n)
 		return (val);
 	else if (val * val < n)
+		val += 1;
 		return (_sqrt_recursion(n));
-	else
-		return (-1);
 }
