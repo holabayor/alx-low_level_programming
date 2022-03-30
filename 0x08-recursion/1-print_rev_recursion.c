@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _print_rev__recursion - print a line
+ * _print_rev_recursion - print a line
  * @s: input string
  * Return: void
  */
