@@ -7,10 +7,10 @@
  */
 int _is_prime(int n, int val)
 {
-	if (n <= 1 || n % val == 0)
-		return (0);
-	else if (val = n)
+	if (val >= n && n > 2)
 		return (1);
+	else if (n % val == 0 || n < 2)
+		return (0);
 	else
 		return (_is_prime(n, val + 1));
 }
