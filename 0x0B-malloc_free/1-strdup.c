@@ -9,13 +9,20 @@
 
 char *_strdup(char *str)
 {
-	char *m = malloc(size);
+	char *m = malloc(sizeof(str));
+	int i, size = 0;
 
-	if (size == 0 || m == 0)
+	for (; str[size] != '\0'; size++)
+		;
+
+	if (str == NULL || m == 0)
 		return (0);
 
-	while (size--)
-		m[size] = str[size];
+	while (i <= size)
+	{
+		m[i] = str[i];
+		i++;
+	}
 
 	return (m);
 }
