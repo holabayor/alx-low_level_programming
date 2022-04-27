@@ -2,7 +2,8 @@
 
 /**
  * get_nodeint_at_index - function to print a list
- * @h: the head of the list
+ * @head: the head of the list
+ * @index: the index of node
  * Return: the number of nodes
  */
 
