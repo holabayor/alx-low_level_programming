@@ -3,7 +3,7 @@
 /**
  * add_nodeint_end - adds a new node at the end
  * @head: head of the linked list.
- * @str: string to store in the list.
+ * @n: integer value to store in the list.
  * Return: address of the head.
  */
 

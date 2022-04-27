@@ -3,7 +3,7 @@
 /**
  * add_nodeint - functon to add node to a list
  * @head: the head of the node
- * @str: string content of the node
+ * @n: content of the node
  * Return: the address of the new element or NULL if it failed
  */
 
