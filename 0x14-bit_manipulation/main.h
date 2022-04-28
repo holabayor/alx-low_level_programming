@@ -5,9 +5,14 @@
 #include <string.h>
 #include <stdio.h>
 
+/**
+ * _putchar - prints a character
+ * @c: the character to be printed
+ * Return: int
+ */
 int _putchar(char c)
 {
-    return ((write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 unsigned int binary_to_uint(const char *b);
