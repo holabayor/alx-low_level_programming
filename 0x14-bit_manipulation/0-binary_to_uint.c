@@ -9,10 +9,10 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int result = 0;
-	int i, j, base = 1;
+	long i, j, base = 1;
 
 	for (i = 0; b[i] != 0; i++)
-	base *= 2;
+		base *= 2;
 	for (j = 0; b[j] != '\0'; j++)
 	{
 		if (b[j] != '1' && b[j] != '0')
