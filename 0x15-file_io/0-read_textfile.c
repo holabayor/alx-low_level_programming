@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	read(fd, buff, letters);
 	buff[letters] = '\0';
-	while(buff[i] != '\0')
+	while (buff[i] != '\0')
 	{
 		_putchar(buff[i]);
 		i++;
