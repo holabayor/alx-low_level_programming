@@ -9,22 +9,25 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t nr, nw;
+	int fd;
+	char *buff;
 
-	int fd, i = 0;
-	char buff[1024];
+	if (filename == NULL)
+		return (0);
 
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
 		return (0);
-	read(fd, buff, letters);
-	buff[letters] = '\0';
-	while (buff[i] != '\0')
-	{
-		_putchar(buff[i]);
-		i++;
-	}
-	close(fd);
 
-	return (i);
+	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
+		return (0);
+	nr = read(fd, buff, letters);
+	nw = write(STDOUT_FILENO, buff, nr);
+	close(fd);
+	free(buff);
+
+	return (nw);
 }
