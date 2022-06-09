@@ -8,11 +8,11 @@
  * should be deleted.
  * Return: 1 if it succeeded, -1 if it failed.
  */
-int delete_dnodeint_at_index(listint_t **head, unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int i;
-	listint_t *prev;
-	listint_t *next;
+	dlistint_t *prev;
+	dlistint_t *next;
 
 	prev = *head;
 
@@ -34,6 +34,7 @@ int delete_dnodeint_at_index(listint_t **head, unsigned int index)
 	if (index != 0)
 	{
 		prev->next = next->next;
+		next->prev = prev;
 		free(next);
 	}
 	else
