@@ -14,7 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx;
 
 
-	if (ht == NULL || key == NULL)
+	item = create_node(key, value);
+	if (item == NULL || ht == NULL || key == NULL)
 		return (0);
 
 
@@ -23,9 +24,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (node == NULL)
 	{
-		item = create_node(key, value);
-		if (item == NULL)
-			return (0);
 		ht->array[idx] = item;
 		return (1);
 	}
@@ -33,14 +31,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(key, node->key) == 0)
 		{
-			item = create_node(key, value);
-			node->next = item;
+			free(node->value);
+			node->value = strdup(value);
 			return (1);
 		}
 		node = node->next;
 	}
 
-	return (0);
+	item->next = ht->array[idx];
+	ht->array[idx] = item;
+	return (1);
 }
 
 /**
