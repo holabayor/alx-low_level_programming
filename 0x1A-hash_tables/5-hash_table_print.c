@@ -11,13 +11,13 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, flag = 0;
 
 
-	if (ht == NULL)
+	if (ht == NULL || ht->array == NULL)
 		return;
 	putchar('{');
 	for (i = 0; i < ht->size; i++)
 	{
 		tmp = ht->array[i];
-		if (tmp != NULL)
+		while (tmp != NULL)
 		{
 			if (flag)
 			{
