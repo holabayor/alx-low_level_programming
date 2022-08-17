@@ -13,7 +13,7 @@ clean :
 	rm -f $(NAME)
 
 oclean :
-	rm *.o
+	rm (OBJ)
 
 fclean:
-	rm -f *.o $(NAME)
+	rm -f $(OBJ) $(NAME)
