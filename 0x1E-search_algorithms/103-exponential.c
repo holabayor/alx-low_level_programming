@@ -35,17 +35,19 @@ int bin_search(int *array, int value, size_t lb, size_t ub)
 	size_t mid;
 
 
+	if ((array == NULL) || (lb > ub))
+		return (-1);
 	while (lb <= ub)
 	{
 		printf("Searching in array: ");
 		print_array(array, lb, ub);
 		mid = (lb + ub) / 2;
-		if (array[mid]  < value)
-			lb = mid + 1;
-		else if (array[mid]  > value)
-			ub = mid - 1;
-		else
+		if (array[mid] == value)
 			return (mid);
+		if (array[mid] < value)
+			lb = mid + 1;
+		else
+			ub = mid - 1;
 	}
 	return (-1);
 }
@@ -67,7 +69,7 @@ int exponential_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	while (pos < size && array[pos] < value)
+	while ((pos < size) && (array[pos] < value))
 	{
 		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 		pos = pos * 2;
@@ -76,9 +78,9 @@ int exponential_search(int *array, size_t size, int value)
 		return (pos);
 	else if (value <= array[pos])
 	{
-		ub = pos > size ? size : pos;
-		printf("Value found between indexes [%lu] and [%lu]\n", pos / 2, ub - 1);
-		return (bin_search(array, value, pos / 2, ub - 1));
+		ub = (pos >= size) ? (size - 1) : pos;
+		printf("Value found between indexes [%lu] and [%lu]\n", pos / 2, ub);
+		return (bin_search(array, value, pos / 2, ub));
 	}
 	return (-1);
 }
