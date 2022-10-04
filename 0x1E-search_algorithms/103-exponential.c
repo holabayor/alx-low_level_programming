@@ -42,12 +42,12 @@ int bin_search(int *array, int value, size_t lb, size_t ub)
 		printf("Searching in array: ");
 		print_array(array, lb, ub);
 		mid = (lb + ub) / 2;
-		if (array[mid] == value)
-			return (mid);
+		if (array[mid] > value)
+			ub = mid - 1;
 		if (array[mid] < value)
 			lb = mid + 1;
 		else
-			ub = mid - 1;
+			return (mid);
 	}
 	return (-1);
 }
