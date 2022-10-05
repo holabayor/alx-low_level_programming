@@ -13,6 +13,7 @@ void print_array(int *array, int lb, int ub)
 	int i;
 
 
+	printf("Searching in array: ");
 	for (i = lb; i < ub; i++)
 	{
 		printf("%d, ", array[i]);
@@ -35,17 +36,19 @@ int bin_search(int *array, int value, size_t lb, size_t ub)
 	size_t mid;
 
 
-	while (ub >= lb)
+	if (ub >= lb)
 	{
-		printf("Searching in array: ");
 		print_array(array, lb, ub);
-		mid = lb + (ub - lb) / 2;
-		if (mid == 0 || (value > array[mid - 1] && array[mid] == value))
+		mid = lb + (ub - lb)  / 2;
+		if (array[mid] == value)
+		{
+			if (array[mid - 1] == value)
+				return (bin_search(array, value, mid - 1, mid));
 			return (mid);
-		else if (value > array[mid])
-			return bin_search(array, value, mid + 1, ub);
-		else
-			return bin_search(array, value, lb, mid - 1);
+		}
+		if (array[mid] < value)
+			return (bin_search(array, value, mid + 1, ub));
+		return (bin_search(array, value, lb, mid - 1));
 	}
 	return (-1);
 }
