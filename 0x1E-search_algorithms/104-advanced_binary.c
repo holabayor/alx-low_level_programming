@@ -43,7 +43,7 @@ int bin_search(int *array, int value, size_t lb, size_t ub)
 		if (array[mid] == value)
 		{
 			if (array[mid - 1] == value)
-				return (bin_search(array, value, mid - 1, mid));
+				return (bin_search(array, value, lb, mid));
 			return (mid);
 		}
 		if (array[mid] < value)
